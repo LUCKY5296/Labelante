@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 // dotenvの読み込み
 require("dotenv").config();
 
@@ -25,7 +25,7 @@ app.use(express.static("public"));
 // index（ルート）
 app.get("/", getHandler.index);
 
-// new（"世界設定"新規作成ページ）
+// new（"世界"新規作成ページ）
 app.get("/new", getHandler.new);
 
 // ポートを監視
