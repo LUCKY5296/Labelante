@@ -2,7 +2,7 @@
 // postリクエストのhandlerをまとめたmodule
 // moduleの読み込み
 const fs = require("fs");
-
+const errorHandler = require("./errorHandler");
 
 // /register/:type（登録フォームが飛んでくるところ）
 exports.register = (req, res) => {
@@ -26,9 +26,9 @@ exports.register = (req, res) => {
       }
       let world = {
         "name": req.body.name,
-        "discription": req.body.name
+        "discription": req.body.discription
       };
-      fs.mkdirSync(`worlds/${world.name}`,)
+      fs.mkdir(`worlds/${world.name}`, errorHandler.mkdir(`worlds/${world.name}`));
       break;
 
     default:

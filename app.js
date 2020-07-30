@@ -22,11 +22,14 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 // GETリクエストのルーティング
-// index（ルート）
+/* index（ルート）*/
 app.get("/", getHandler.index);
-
-// new（"世界"新規作成ページ）
+/* new（"世界"新規作成ページ）*/
 app.get("/new", getHandler.new);
+
+// エラーハンドリングの登録
+app.use(errorHandler.NOT_FOUND);
+app.use(errorHandler.INTERNAL_SERVER_ERROR);
 
 // ポートを監視
 app.listen(port, console.log(`Listening on ${port}...`));

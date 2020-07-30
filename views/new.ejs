@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= websiteName %> | 新規作成</title>
+  <title>新規作成 | <%= websiteName %></title>
 </head>
 
 <body>
-  <form action="create/data" method="post">
-
+  <h1>世界の新規作成</h1>
+  <form action="/create/data" method="post">
+    <p>名前：<input type="text" name="name"></p>
+    <p>概要：<input type="text" name="discription"></p>
   </form>
 </body>
 
